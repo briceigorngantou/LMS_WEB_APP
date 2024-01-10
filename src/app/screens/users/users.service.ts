@@ -94,7 +94,7 @@ export class UsersService {
   addUser(user: Users): Observable<ResponseBody> {
     return this.http
       .post<ResponseBody>(
-        `${this.userUriApi}/api/users/add`,
+        `${this.userUriApi}/api/auth/register`,
         user,
         this.httpOptions
       )

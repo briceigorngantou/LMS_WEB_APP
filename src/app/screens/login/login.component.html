@@ -2,14 +2,17 @@
     <app-navbar></app-navbar>
     <app-sidebar></app-sidebar>
  <section class="form-container">
- 
-    <form (ngSubmit)="onSubmit()" method="post">
-       <h3>login now</h3>
-       <p>Your Username <span>*</span></p>
-       <input type="username" name="username" placeholder="Enter your username" required maxlength="50" class="box">
-       <p>Your Password <span>*</span></p>
-       <input type="password" name="pass" placeholder="Enter your password" required maxlength="20" class="box">
-       <input type="submit" value="Login" name="submit" class="btn">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <h3>Login now</h3>
+      <p>
+        <label for="username">Your Username <span>*</span></label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" placeholder="Enter your username" required maxlength="50" class="box">
+      </p>
+      <p>
+        <label for="password">Your Password <span>*</span></label>
+        <input type="password" id="password" name="pass" [(ngModel)]="password" placeholder="Enter your password" required maxlength="20" class="box">
+      </p>
+      <button type="submit" class="btn">Login</button>
     </form>
  
  </section>

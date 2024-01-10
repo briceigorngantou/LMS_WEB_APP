@@ -2,26 +2,39 @@
     <app-navbar></app-navbar>
     <app-sidebar></app-sidebar>
     <section class="form-container">
-        <form action="" method="post" enctype="multipart/form-data">
-           <h3>register now</h3>
-           <p>FullName <span>*</span></p>
-           <input type="text" name="fullName" placeholder="Enter your fullName" required maxlength="50" class="box">
-           <p>Username <span>*</span></p>
-           <input type="text" name="username" placeholder="Enter your username" required maxlength="50" class="box">
-           <p>Email <span>*</span></p>
-           <input type="email" name="email" placeholder="Enter your email" required maxlength="50" class="box">
-           <p>Password <span>*</span></p>
-           <input type="password" name="pass" placeholder="Enter your password" required maxlength="20" class="box">
-           <p>Age <span>*</span></p>
-           <input type="number" name="age" placeholder="Enter your age" required maxlength="20" class="box">
-           <p>Select Role <span>*</span></p>
-           <select name="role" class="box">
-                <option value="ADMIN">ADMIN</option>
-                <option value="STUDENT">STUDENT</option>
-                <option value="INSTRUCTOR">INSTRUCTOR</option>
-           </select>
-           <input type="submit" value="register new" name="submit" class="btn">
-        </form>
+        <form (ngSubmit)="onSubmitForm()" #registrationForm="ngForm">
+            <h3>Register Now</h3>
+            <p>
+                <label for="fullName">Full Name <span>*</span></label>
+                <input type="text" name="fullName" id="fullName" [(ngModel)]="user.fullName" placeholder="Enter your full name" required maxlength="50" class="box">
+            </p>
+            <p>
+                <label for="username">Username <span>*</span></label>
+                <input type="text" name="username" id="username" [(ngModel)]="user.username" placeholder="Enter your username" required maxlength="50" class="box">
+            </p>
+            <p>
+                <label for="email">Email <span>*</span></label>
+                <input type="email" name="email" id="email" [(ngModel)]="user.email" placeholder="Enter your email" required maxlength="50" class="box">
+            </p>
+            <p>
+                <label for="password">Your Password <span>*</span></label>
+                <input type="password" id="password" name="pass" [(ngModel)]="user.password" placeholder="Enter your password" required maxlength="20" class="box">
+            </p>  
+            <p>
+                <label for="age">Age <span>*</span></label>
+                <input type="number" name="age" id="age" [(ngModel)]="user.age" placeholder="Enter your age" required class="box">
+            </p>
+            <p>
+                <label for="role">Role <span>*</span></label>
+                <select id="role" name="role" class="box" [(ngModel)]="user.role">
+                    <option value="ADMIN">ADMIN</option>
+                    <option value="STUDENT">STUDENT</option>
+                    <option value="INSTRUCTOR">INSTRUCTOR</option>
+                </select>
+            </p>
+            <button type="submit" class="btn">Register New</button>
+          </form>
+          
      
      </section>
  <app-footer></app-footer>

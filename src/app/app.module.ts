@@ -10,7 +10,7 @@ import { EnrollmentModule } from './screens/enrollment/enrollment.module';
 import { HomeComponent } from './screens/home/home.component';
 import { LoginComponent } from './screens/login/login.component';
 import { PageNotFoundComponent } from './screens/page-not-found/page-not-found.component';
-import { RegisterComponent } from './screens/register/register.component';
+import RegisterComponent from './screens/register/register.component';
 import { ProfileComponent } from './screens/users/profile/profile.component';
 import { TeachersComponent } from './screens/users/teachers/teachers.component';
 import { UsersModule } from './screens/users/users.module';
