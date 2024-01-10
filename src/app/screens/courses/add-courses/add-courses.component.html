@@ -1,0 +1,27 @@
+<body> 
+    <app-navbar></app-navbar>
+    <app-sidebar></app-sidebar>
+    <section class="form-container">
+        <form (ngSubmit)="onSubmitCourse()" #courseForm="ngForm">
+            <h3>Add Course</h3>
+            <p>
+              <label for="title">Title <span>*</span></label>
+              <input type="text" name="title" id="title" [(ngModel)]="course.title" placeholder="Enter title of course" required maxlength="50" class="box">
+            </p>
+            <p>
+              <label for="code">Code <span>*</span></label>
+              <input type="text" name="code" id="code" placeholder="Enter code" [(ngModel)]="course.code" required maxlength="4" class="box">
+            </p>
+            <p>
+              <label for="description">Description <span>*</span></label>
+              <textarea name="description" id="description" placeholder="Enter description" [(ngModel)]="course.description" required maxlength="100" rows="3" class="box"></textarea>
+            </p>
+            <p>
+              <label for="uri">Certification <span>*</span></label>
+              <input type="text" name="certification" id="uri" placeholder="Enter certification" [(ngModel)]="course.certification" required maxlength="20" class="box">
+            </p>
+            <button type="submit" class="btn">Create Course</button>
+          </form>
+     </section>
+ <app-footer></app-footer>
+ </body>

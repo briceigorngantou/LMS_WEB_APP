@@ -1,15 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
-import { CoursesService } from '../courses/courses.service';
 import { EnrollmentService } from '../enrollment/enrollment.service';
-import { UsersService } from '../users/users.service';
+import { Users } from './users';
+import { UsersService } from './users.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-users',
   standalone: true,
   imports: [
     FooterComponent,
@@ -18,41 +19,24 @@ import { UsersService } from '../users/users.service';
     CommonModule,
     HttpClientModule,
   ],
-  templateUrl: './home.component.html',
+  templateUrl: './users.component.html',
 })
-export class HomeComponent {
-  totalCourses: number = 0;
+export class UsersComponent {
+  usersList: Users[] = [];
   totalMyClasses: number = 0;
   totalCertificateDelivered: number = 0;
-  totalTeachers: number = 0;
-  totalUsers: number = 0;
   userId: number = 1;
+
   constructor(
-    private courseService: CoursesService,
+    private router: Router,
     private userService: UsersService,
     private enrollService: EnrollmentService
   ) {}
 
   ngOnInit() {
-    this.courseService
-      .getAllCourses()
-      .subscribe(
-        (value) =>
-          value.data != null && (this.totalCourses = value.data?.length)
-      );
-
     this.userService
       .getAllUsers()
-      .subscribe(
-        (value) => value.data != null && (this.totalUsers = value.data?.length)
-      );
-
-    this.userService
-      .getAllTeachers()
-      .subscribe(
-        (value) =>
-          value.data != null && (this.totalTeachers = value.data?.length)
-      );
+      .subscribe((value) => (this.usersList = value.data));
 
     this.enrollService
       .listOfCourses(this.userId)
@@ -60,5 +44,9 @@ export class HomeComponent {
         (value) =>
           value.data != null && (this.totalMyClasses = value.data?.length)
       );
+  }
+
+  gotoUserProfile(user: Users) {
+    this.router.navigate(['/profile', user.id]);
   }
 }

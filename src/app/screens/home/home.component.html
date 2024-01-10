@@ -6,25 +6,30 @@
         <div class="box-container">
            <div class="box">
               <h3 class="title">Courses</h3>
-              <p class="likes">Total courses : <span>125</span></p>
+              <p class="likes">Total courses : <span> {{ totalCourses }}</span></p>
               <a href="courses" class="inline-btn">View courses</a>
            </div>
            <div class="box">
               <h3 class="title">Teachers</h3>
-              <p class="likes">Total teachers : <span>135</span></p>
+              <p class="likes">Total teachers : <span>{{ totalTeachers }}</span></p>
               <a href="teachers" class="inline-btn">Become a tutor</a>
            </div>
            <div class="box">
+            <h3 class="title">Students</h3>
+            <p class="likes">Total Students : <span> {{ totalUsers }}</span></p>
+            <a href="users" class="inline-btn">Become a Student</a>
+         </div>
+           <div class="box">
             <h3 class="title">My classes</h3>
-            <p class="likes">all My classes : <span>35</span></p>
-            <a href="teachers" class="inline-btn">Become a tutor</a>
+            <p class="likes">all My classes : <span>{{ totalMyClasses }}</span></p>
+            <a href="mycourse" class="inline-btn">View My Courses</a>
          </div>
            <div class="box">
               <h3 class="title">Certificates delivered</h3>
-              <p class="likes">Total certificates : <span>205</span></p>
-              <a href="teachers" class="inline-btn">Get started</a>
+              <p class="likes">Total certificates : <span>{{ totalCertificateDelivered }}</span></p>
+              <a href="courses" class="inline-btn">View Certificates</a>
            </div>
         </div>
      </section>
- <app-footer></app-footer>
+      <app-footer></app-footer>
  </body>

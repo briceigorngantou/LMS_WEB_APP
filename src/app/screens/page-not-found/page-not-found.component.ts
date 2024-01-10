@@ -4,11 +4,9 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-teachers',
+  selector: 'app-page-not-found',
   standalone: true,
   imports: [FooterComponent, NavbarComponent, SidebarComponent],
-  templateUrl: './teachers.component.html',
+  templateUrl: './page-not-found.component.html',
 })
-export class TeachersComponent {
-
-}
+export class PageNotFoundComponent {}
