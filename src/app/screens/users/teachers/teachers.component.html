@@ -1,0 +1,30 @@
+<body> 
+   <app-navbar></app-navbar>
+   <app-sidebar></app-sidebar>
+
+   <section class="teachers">
+
+       <h1 class="heading">expert teachers</h1>
+    
+       <div class="box-container">
+    
+          <div class="box offer">
+             <h3>Become a tutor ?</h3>
+             <a href="register" class="inline-btn">Let create account</a>
+          </div>
+    
+          <div *ngFor="let user of teachersList" class="box">
+             <div class="tutor">
+                <img src="assets/images/pic-4.jpg" alt="">
+                <div>
+                   <h3>{{user.fullName}}</h3>
+                   <span>{{user.email}}</span>
+                </div>
+             </div>
+             <p>Age: <span>{{user.age}} ans</span></p>
+          </div>
+       </div>
+    
+    </section>
+<app-footer></app-footer>
+</body>

@@ -1,0 +1,28 @@
+<body> 
+    <app-navbar></app-navbar>
+    <app-sidebar></app-sidebar>
+
+    <section class="teachers">
+
+        <h1 class="heading">All students</h1>
+        <div class="box-container">
+           <div class="box offer">
+              <h3>Become a student</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <a href="register" class="inline-btn">get started</a>
+           </div>
+           <div *ngFor="let user of usersList" class="box">
+              <div class="tutor">
+                 <img src="assets/images/pic-6.jpg" alt="">
+                 <div>
+                    <h3>{{user.fullName}}</h3>
+                    <span>{{user.email}}</span>
+                 </div>
+              </div>
+              <p>total courses: <span>{{totalMyClasses}}</span></p>
+              <p>total certificates : <span>{{totalCertificateDelivered}}</span></p>
+           </div>
+        </div>
+     </section>
+ <app-footer></app-footer>
+ </body>

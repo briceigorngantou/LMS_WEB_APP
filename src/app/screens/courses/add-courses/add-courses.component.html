@@ -1,0 +1,20 @@
+<body> 
+    <app-navbar></app-navbar>
+    <app-sidebar></app-sidebar>
+    <section class="form-container">
+        <form action="" method="post" enctype="multipart/form-data">
+           <h3>Add Course</h3>
+           <p>Title <span>*</span></p>
+           <input type="text" name="title" placeholder="Enter title of course" required maxlength="50" class="box">
+           <p>Code <span>*</span></p>
+           <input type="text" name="code" placeholder="Enter code" required maxlength="4" class="box">
+           <p>Description <span>*</span></p>
+           <textarea name="description" placeholder="Enter description" required maxlength="100" rows="3" class="box"></textarea>
+           <p>Certification <span>*</span></p>
+           <input type="certification" name="uri" placeholder="Enter certification" required maxlength="20" class="box">
+           <input type="submit" value="create course" name="submit" class="btn">
+        </form>
+     
+     </section>
+ <app-footer></app-footer>
+ </body>

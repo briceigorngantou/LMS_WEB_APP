@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FooterComponent } from '../../components/footer/footer.component';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
-import { SidebarComponent } from '../../components/sidebar/sidebar.component';
-import { Courses } from './courses';
-import { CoursesService } from './courses.service';
+import { FooterComponent } from '../../../components/footer/footer.component';
+import { NavbarComponent } from '../../../components/navbar/navbar.component';
+import { SidebarComponent } from '../../../components/sidebar/sidebar.component';
+import { Courses } from '../courses';
+import { CoursesService } from '../courses.service';
 
 @Component({
-  selector: 'app-courses',
+  selector: 'app-detail-course',
   standalone: true,
   imports: [
     FooterComponent,
@@ -18,9 +18,9 @@ import { CoursesService } from './courses.service';
     CommonModule,
     HttpClientModule,
   ],
-  templateUrl: './courses.component.html',
+  templateUrl: './detail-course.component.html',
 })
-export class CoursesComponent implements OnInit {
+export class DetailCourseComponent {
   courseList: Courses[] = [];
 
   constructor(private router: Router, private courseService: CoursesService) {}
@@ -32,7 +32,6 @@ export class CoursesComponent implements OnInit {
   }
 
   gotoCourseDetails(course: Courses) {
-    console.log('coursesssss:', course);
     this.router.navigate(['/detail-course', course.id]);
   }
 }

@@ -3,15 +3,10 @@
     <app-sidebar></app-sidebar>
     <section class="courses">
 
-        <h1 class="heading">our courses</h1>
+        <h1 class="heading">My courses</h1>
      
-        <div class="flex" style="margin-bottom: 15px;">
-           <a href="addcourse" class="inline-btn">Create new Course</a>
-        </div>
-
         <div class="box-container">
-
-           <div *ngFor="let course of courseList" class="box">
+           <div *ngFor="let course of myCourseList" class="box">
               <div class="tutor">
                  <img src="assets/images/pic-2.jpg" alt="">
                  <div class="info">

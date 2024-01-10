@@ -1,0 +1,70 @@
+<body> 
+    <app-navbar></app-navbar>
+    <app-sidebar></app-sidebar>
+    <section class="playlist-details">
+
+        <h1 class="heading">course details</h1>
+     
+        <div class="row">
+     
+           <div class="column">
+            <div class="box-container">
+               <form action="" method="post" class="save-playlist">
+               
+                  <div class="flex">
+                     <button type="submit" style="margin-right: 10px;"><i class="far fa-bookmark"></i> <span style="color: #8e44ad;">Enrolled course</span></button>
+                     <button type="submit" style="margin-right: 10px;"><i class="far fa-bookmark"></i> <span>Not Started</span></button>
+                     <button type="submit" style="margin-right: 10px;"><i class="far fa-bookmark"></i> <span>In Progress</span></button>
+                     <button type="submit" style="margin: 10px 0px 0px 0px;"><i class="far fa-bookmark"></i> <span>Completed</span></button>
+                  </div>
+               </form>
+            </div>
+        
+              <div class="thumb">
+                 <img src="assets/images/thumb-1.png" alt="">
+                 <span>state course</span>
+              </div>
+           </div>
+           <div class="column">
+              <div class="tutor">
+                 <img src="assets/images/pic-6.jpg" alt="">
+                 <div>
+                    <h3>Code du cours</h3>
+                    <span>Date de creation</span>
+                 </div>
+              </div>
+        
+              <div class="details">
+                 <h3>Titre du cours</h3>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum minus reiciendis, error sunt veritatis exercitationem deserunt velit doloribus itaque voluptate.</p>
+                 <button type="submit" class="inline-btn"> unSubscribe ?</button>
+              </div>
+           </div>
+        </div>
+     
+     </section>
+     
+     <section class="courses">
+
+      <h1 class="heading">our courses</h1>
+   
+      <div class="box-container">
+         <div *ngFor="let course of courseList" class="box">
+            <div class="tutor">
+               <img src="assets/images/pic-2.jpg" alt="">
+               <div class="info">
+                  <h3>{{ course.code}}</h3>
+                  <span>{{ course.createdAt}}</span>
+               </div>
+            </div>
+            <div class="thumb">
+               <img src="assets/images/thumb-1.png" alt="">
+               <span>10 videos</span>
+            </div>
+            <h3 class="title">{{ course.title}}</h3>
+            <button (click)="gotoCourseDetails(course)" class="inline-btn"> view course </button>
+         </div>
+      </div>
+   </section>
+ <app-footer></app-footer>
+ </body>
